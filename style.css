@@ -1,0 +1,192 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+body{
+    background-color: wheat;
+}
+
+.search-gui {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    background-color: aliceblue;
+}
+
+.search-gui:focus {
+    border: 3px solid lightgreen;
+}
+
+/*Grid system start*/
+
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 560px 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    ". frontLineText ."
+    ". searchbar ."
+    ". result .";
+}
+
+
+.frontLineText{
+    font-family: 'Hanalei', cursive !important;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    border-bottom: 2px double red;
+    margin-top: 70px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 10vh;
+    grid-area: frontLineText;
+}
+
+.searchbar{
+    grid-area: searchbar;
+}
+
+.result{
+    grid-area: result;
+}
+
+/*Grid system slut*/
+
+/*Dark mode*/
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+.dark-mode-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 17px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 2px;
+}
+
+.dark-mode-button:hover{
+    background-color: darkgreen;
+    cursor: pointer;
+}
+
+/*Table*/
+table {
+    margin-top: 7px;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+
+/*Snack bar start*/
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+
+/*Snack2*/
+#snackbar2 {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar2.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+
+/*Snack bar slut*/

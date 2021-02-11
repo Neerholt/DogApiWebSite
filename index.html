@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"><!--Google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Hanalei&family=Stalinist+One&display=swap" rel="stylesheet"><!--Google fonts-->
+    <link rel="icon" type="image/png" href="images/dogapifavicon.png">
+    <title>DogApi</title>
+</head>
+<body>
+<div class="grid">
+    <div class="frontLineText"><p>Dog Api</p></div>
+    <div class="searchbar">
+        <form name="userSearchForm" action="" method="GET"><input class="search-gui" type="text" id="user-search" name="user-search-name" placeholder="Search for a random dog images"></form>
+        <button id="delete-text" class="dark-mode-button">Delete search</button>
+        <button  id="history" class="dark-mode-button">View History</button>
+        <button class="dark-mode-button" id="clImages">Clear Images</button>
+        <button onclick="darkmode()" class="dark-mode-button" id="dark">Enable Darkmode</button>
+        <table id="tableHistory" hidden>
+            <tr>
+                <th>Company</th>
+                <th>Contact</th>
+                <th>Country</th>
+                <th>Country</th>
+                <th>Country</th>
+                <th>Country</th>
+            </tr>
+        </table>
+    </div>
+    <div class="result">
+        <img src="aasd.png" id="imagesDog" width="100%" height="290px" style="border: none" >
+    </div>
+</div>
+<!--Snackbar-->
+<div id="snackbar">Text deleted</div>
+<div id="snackbar2">Images cleared</div>
+</body>
+<script src="js/searchApi.js"></script>
+<script src="js/buttons.js"></script>
+</html>

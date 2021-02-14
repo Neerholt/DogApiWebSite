@@ -22,7 +22,7 @@ $("#history").click(function(){
 });
 
 
-
+/*Delete userinput*/
 $("#delete-text").click(function (){
     document.getElementById('user-search').value = ''
     var x = document.getElementById("snackbar");
@@ -30,8 +30,11 @@ $("#delete-text").click(function (){
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 })
 
+
+/*Delete images*/
 $("#clImages").click(function (){
-    document.getElementById('imagesDog').src = ''
+    document.getElementById("idReslut").innerHTML = "";
+    document.getElementById('user-search').value = ''
     var x = document.getElementById("snackbar2");
     x.className = "show";
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);

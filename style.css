@@ -14,14 +14,14 @@ body{
     margin: 8px 0;
     box-sizing: border-box;
     border: 3px solid #ccc;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
     outline: none;
     background-color: aliceblue;
 }
 
 .search-gui:focus {
-    border: 3px solid lightgreen;
+    border: 3px solid #4CAF50;
 }
 
 /*Grid system start*/
@@ -59,9 +59,16 @@ body{
 
 /*Grid system slut*/
 
+
+img{
+    border-width: 0;
+}
+
+
+
 /*Dark mode*/
 .dark-mode {
-    background-color: black;
+    background-color: #363945;
     color: white;
 }
 

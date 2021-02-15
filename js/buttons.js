@@ -1,60 +1,66 @@
 /*Dark mode*/
-let darkMode = localStorage.getItem('darkMode');
-const darkModeToggle = document.querySelector('#dark');
+    let darkMode = localStorage.getItem('darkMode');
+    const darkModeToggle = document.querySelector('#dark');
 
-const enableDarkMode = () => {
-    document.body.classList.add('dark-mode');
-    localStorage.setItem('darkMode', 'enabled');
-}
-
-const disableDarkMode = () => {
-    document.body.classList.remove('dark-mode');
-    localStorage.setItem('darkMode', 'disabled');
-}
-
-if (darkMode === 'enabled') {
-    enableDarkMode();
-}
-
-darkModeToggle.addEventListener('click', () => {
-    darkMode = localStorage.getItem('darkMode');
-    if (darkMode !== 'enabled') {
-        enableDarkMode();
-    } else {
-        disableDarkMode();
+    const enableDarkMode = () => {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', 'enabled');
+        document.getElementById("dark").innerHTML = "Darkmode:Off";
     }
-});
+
+    const disableDarkMode = () => {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', 'disabled');
+        document.getElementById("dark").innerHTML = "Darkmode:On";
+    }
+
+    if (darkMode === 'enabled') {
+        enableDarkMode();
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+        darkMode = localStorage.getItem('darkMode');
+        if (darkMode !== 'enabled') {
+            enableDarkMode();
+        } else {
+            disableDarkMode();
+        }
+    });
+
 
 
 
 /*View History*/
-var x = document.getElementById("tableHistory");
-let historyMode = localStorage.getItem('history');
-const historyToggle = document.querySelector('#historyButton');
 
-const enableHistory = () => {
-    x.style.display = "block";
-    localStorage.setItem('history', 'enabled');
-}
+    var x = document.getElementById("tableHistory");
+    let historyMode = localStorage.getItem('history');
+    const historyToggle = document.querySelector('#historyButton');
 
-const disableHistory = () => {
-    x.style.display = "none";
-    localStorage.setItem('history', 'disabled');
-}
-
-if (historyMode === 'enabled') {
-    enableHistory();
-}
-
-historyToggle.addEventListener('click', () => {
-    historyMode = localStorage.getItem('history');
-    if (historyMode !== 'enabled') {
-        enableHistory();
-    } else {
-        disableHistory();
+    const enableHistory = () => {
+        x.style.display = "block";
+        if(localStorage.getItem('data') != null){
+            document.getElementById('tableHistory').innerHTML = JSON.parse(localStorage.getItem('data'));
+        }
+        localStorage.setItem('history', 'enabled');
     }
-});
 
+    const disableHistory = () => {
+        x.style.display = "none";
+        localStorage.setItem('history', 'disabled');
+    }
+
+    if (historyMode === 'enabled') {
+        enableHistory();
+    }
+
+    historyToggle.addEventListener('click', () => {
+        historyMode = localStorage.getItem('history');
+        if (historyMode !== 'enabled') {
+            enableHistory();
+        } else {
+            disableHistory();
+        }
+    });
 
 
 /*Delete userinput*/

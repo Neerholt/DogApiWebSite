@@ -25,6 +25,23 @@ function idk(){
             document.querySelector('#idReslut').appendChild(img);
         }
     });
+
+
+    var newSearchData = document.getElementById('user-search').value;
+
+    //Save a empty array
+    if(localStorage.getItem('data') == null){
+        localStorage.setItem('data', '[]');
+    }
+
+    //Slap old data on new data
+    var oldData = JSON.parse(localStorage.getItem('data'));
+    oldData.push(newSearchData)
+
+    // save old and new data
+    localStorage.setItem('data', JSON.stringify(oldData));
+
+
         d(userInput);
         isThisEmpty(userInput);
 }

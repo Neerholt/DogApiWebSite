@@ -1,6 +1,5 @@
-$(document).ready(function (){
-    idk();
-})
+$(window).on("load", function(){ idk();  });
+
 
 
 /*Call idk() function on keyup*/
@@ -26,21 +25,25 @@ function idk(){
             document.querySelector('#idReslut').appendChild(img);
         }
     });
-        d(userInput)
+        d(userInput);
+        isThisEmpty(userInput);
 }
 
 
-//I made this function so that i can call it specifically in the buttons script without calling the api
+//I made this function so that i can call it specifically in the buttons script without calling the api script
 function d(x){
     /*if the userinput == nothing disable the button and mouse cursor displays not-allowed*/
     if(x != ""){
         $("#delete-text").prop('disabled', false);
         $('#delete-text').css('cursor','pointer');
+        $('#delete-text').css("background-color", "#4CAF50");
     }else {
         $("#delete-text").prop('disabled', true);
         $('#delete-text').css('cursor','not-allowed');
+        $('#delete-text').css("background-color", "#DD4132");
     }
 }
+
 
 
 

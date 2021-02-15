@@ -24,6 +24,8 @@ $("#history").click(function(){
 
 /*Delete userinput*/
 $("#delete-text").click(function (){
+    //implement this function to run again, cuz otherwise i would only run the d code on load
+    d("");//Epic fix :) Linked to SearchApi
     document.getElementById('user-search').value = ''
     var x = document.getElementById("snackbar");
     x.className = "show";

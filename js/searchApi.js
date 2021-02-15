@@ -1,11 +1,15 @@
+$(document).ready(function (){
+    idk();
+})
+
+
 /*Call idk() function on keyup*/
 $("#user-search").keyup(function (){
-
     idk();
 })
 
 /*Get the data from the api*/
-function idk(x){
+function idk(){
     var userInput = $("#user-search").val();
     let userInputToLower = userInput.toLowerCase();
 
@@ -22,17 +26,22 @@ function idk(x){
             document.querySelector('#idReslut').appendChild(img);
         }
     });
+        d(userInput)
+}
 
+
+//I made this function so that i can call it specifically in the buttons script without calling the api
+function d(x){
+    /*if the userinput == nothing disable the button and mouse cursor displays not-allowed*/
+    if(x != ""){
+        $("#delete-text").prop('disabled', false);
+        $('#delete-text').css('cursor','pointer');
+    }else {
+        $("#delete-text").prop('disabled', true);
+        $('#delete-text').css('cursor','not-allowed');
+    }
 }
 
 
 
-/*if the userinput == nothing disable the button and mouse cursor displays not-allowed*/
-if(returnUserInput() == "a"){
-    $("#delete-text").prop('disabled', false);
-    $('#delete-text').css('cursor','pointer');
-}else {
-    $("#delete-text").prop('disabled', true);
-    $('#delete-text').css('cursor','not-allowed');
-}
 

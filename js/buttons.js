@@ -1,5 +1,4 @@
 /*Dark mode*/
-
 let darkMode = localStorage.getItem('darkMode');
 const darkModeToggle = document.querySelector('#dark');
 
@@ -29,14 +28,33 @@ darkModeToggle.addEventListener('click', () => {
 
 
 /*View History*/
-$("#history").click(function(){
-    $("#tableHistory").toggle();
-    if (typeof(Storage) !== "undefined") {
-        localStorage.setItem("historyClicked", "true");
+var x = document.getElementById("tableHistory");
+let historyMode = localStorage.getItem('history');
+const historyToggle = document.querySelector('#historyButton');
+
+const enableHistory = () => {
+    x.style.display = "block";
+    localStorage.setItem('history', 'enabled');
+}
+
+const disableHistory = () => {
+    x.style.display = "none";
+    localStorage.setItem('history', 'disabled');
+}
+
+if (historyMode === 'enabled') {
+    enableHistory();
+}
+
+historyToggle.addEventListener('click', () => {
+    historyMode = localStorage.getItem('history');
+    if (historyMode !== 'enabled') {
+        enableHistory();
     } else {
-        document.getElementById("result").innerHTML = "browser does not support Web Storage";
+        disableHistory();
     }
 });
+
 
 
 /*Delete userinput*/

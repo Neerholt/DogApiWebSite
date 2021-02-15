@@ -60,10 +60,15 @@ body{
 /*Grid system slut*/
 
 
-img{
-    border-width: 0;
+#idReslut{
+    height: 290px;
 }
 
+img{
+    max-width: 100%;
+    max-height: 290px;
+    display: block; /* remove extra space below image */
+}
 
 
 /*Dark mode*/
@@ -98,7 +103,7 @@ table {
 }
 
 td, th {
-    border: 1px solid #dddddd;
+    border: 2px solid #4CAF50;
     text-align: left;
     padding: 8px;
 }

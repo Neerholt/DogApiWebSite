@@ -1,0 +1,12 @@
+#consent-popup {
+  font-size: 2vh;
+  transition: opacity 1s ease;
+
+  &.hidden {
+    opacity: 0;
+  }
+}
+
+#consent-popup a{
+  color: red;
+}

@@ -1,69 +1,89 @@
+/*
+$(window).on("load", function(){
+    if (!getCookies.cookieConsent === true){
+        darkModeFunction();
+        historyFunction();
+        removeButtonsIfCookiesGetsDisabled();
+        console.log(getCookies);
+    }
+});
+
+
+//Get the cookies so that if the users disables them they are not going to be set/displayed
+var getCookies = document.cookie
+    .split(';')
+    .map(cookie => cookie.split('='))
+    .reduce((accumulater, [key, value]) => ({...accumulater, [key.trim()]: decodeURIComponent(value)}),
+ {});
+*/
+
 /*Dark mode*/
-    let darkMode = localStorage.getItem('darkMode');
-    const darkModeToggle = document.querySelector('#dark');
+        let darkMode = localStorage.getItem('darkMode');
+        const darkModeToggle = document.querySelector('#dark');
 
-    const enableDarkMode = () => {
-        document.body.classList.add('dark-mode');
-        localStorage.setItem('darkMode', 'enabled');
-        document.getElementById("dark").innerHTML = "Darkmode:Off";
-    }
-
-    const disableDarkMode = () => {
-        document.body.classList.remove('dark-mode');
-        localStorage.setItem('darkMode', 'disabled');
-        document.getElementById("dark").innerHTML = "Darkmode:On";
-    }
-
-    if (darkMode === 'enabled') {
-        enableDarkMode();
-    }
-
-    darkModeToggle.addEventListener('click', () => {
-        darkMode = localStorage.getItem('darkMode');
-        if (darkMode !== 'enabled') {
-            enableDarkMode();
-        } else {
-            disableDarkMode();
+        const enableDarkMode = () => {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('darkMode', 'enabled');
+            document.getElementById("dark").innerHTML = "Darkmode:Off";
         }
-    });
+
+        const disableDarkMode = () => {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', 'disabled');
+            document.getElementById("dark").innerHTML = "Darkmode:On";
+        }
+
+        if (darkMode === 'enabled') {
+            enableDarkMode();
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            darkMode = localStorage.getItem('darkMode');
+            if (darkMode !== 'enabled') {
+                enableDarkMode();
+            } else {
+                disableDarkMode();
+            }
+        });
 
 
 
 
 /*View History*/
-    var x = document.getElementById("tableHistory");
-    let historyMode = localStorage.getItem('history');
-    const historyToggle = document.querySelector('#historyButton');
+       var x = document.getElementById("tableHistory");
+       let historyMode = localStorage.getItem('history');
+       const historyToggle = document.querySelector('#historyButton');
 
-    const enableHistory = () => {
-        x.style.display = "block";
-        if(localStorage.getItem('data') != null){
-            document.getElementById('tableHistory').innerHTML = JSON.parse(localStorage.getItem('data'));
-        }else {
-            document.getElementById('tableHistory').innerHTML = "No history";
-        }
-        localStorage.setItem('history', 'enabled');
-        document.getElementById("historyButton").innerHTML = "Hide History";
-    }
+       const enableHistory = () => {
+           x.style.display = "block";
+           if(localStorage.getItem('data') != null){
+               document.getElementById('tableHistory').innerHTML = JSON.parse(localStorage.getItem('data'));
+           }else {
+               document.getElementById('tableHistory').innerHTML = "No history";
+           }
+           localStorage.setItem('history', 'enabled');
+           document.getElementById("historyButton").innerHTML = "Hide History";
+       }
 
-    const disableHistory = () => {
-        x.style.display = "none";
-        localStorage.setItem('history', 'disabled');
-        document.getElementById("historyButton").innerHTML = "Show History";
-    }
+       const disableHistory = () => {
+           x.style.display = "none";
+           localStorage.setItem('history', 'disabled');
+           document.getElementById("historyButton").innerHTML = "Show History";
+       }
 
-    if (historyMode === 'enabled') {
-        enableHistory();
-    }
+       if (historyMode === 'enabled') {
+           enableHistory();
+       }
 
-    historyToggle.addEventListener('click', () => {
-        historyMode = localStorage.getItem('history');
-        if (historyMode !== 'enabled') {
-            enableHistory();
-        } else {
-            disableHistory();
-        }
-    });
+       historyToggle.addEventListener('click', () => {
+           historyMode = localStorage.getItem('history');
+           if (historyMode !== 'enabled') {
+               enableHistory();
+           } else {
+               disableHistory();
+           }
+       });
+
 
 
 /*Delete userinput*/
@@ -113,5 +133,15 @@ $( "#user-search" ).on( "keydown", function( event ) {
     }
 });
 
+/*
+function removeButtonsIfCookiesGetsDisabled(){
+    var elem = document.getElementById('historyButton');
+    var elem2 = document.getElementById('dark');
+    elem.parentNode.removeChild(elem);
+    elem2.parentNode.removeChild(elem2);
+    return false;
+}
+
+ */
 
 

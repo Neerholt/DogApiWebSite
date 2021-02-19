@@ -36,10 +36,11 @@ function dataFetch(){
             img.src = $images;
             isThisEmpty($images);
             saveSearch(userInput);
-            disableDeleteSearchButton(userInput);
             document.querySelector('#idReslut').appendChild(img);
         }
     });
+
+    disableDeleteSearchButton(userInput);
 }
 
 
